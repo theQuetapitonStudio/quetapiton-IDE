@@ -1,6 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef CBUF_H
+#define CBUF_H
 
-inline void cbuf() {
-    while ((getchar()) != '\n');   
+#include <stdio.h>
+
+static inline void cbuf(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
 }
+
+#endif
